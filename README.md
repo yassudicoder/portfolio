@@ -8,7 +8,7 @@ index.html          all the page text (name, headings, about, contact, socials)
 css/style.css       all styling; colors and fonts are at the top in :root
 js/projects.js      ✏️ your projects (the only JS file you need to edit)
 js/main.js          builds the ring, project list and grid; scroll reveals
-js/fx.js            extras: intro loader, custom cursor, draggable ring, text scramble,
+js/fx.js            extras: intro loader, draggable ring, text scramble,
                     clock, counters, footer letters (the site still works without it)
 assets/             portrait, favicon, project screenshots, CV
 ```

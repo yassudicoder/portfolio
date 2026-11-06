@@ -733,51 +733,6 @@ a.bracket:hover { opacity: 0.55; }
 .hero__stage.is-dragging { cursor: grabbing; }
 .hero__portrait { -webkit-user-drag: none; }
 
-/* ---------- Custom cursor ---------- */
-
-.has-cursor,
-.has-cursor * { cursor: none !important; }
-
-.cursor {
-  position: fixed;
-  left: 0; top: 0;
-  z-index: 300;
-  pointer-events: none;
-  opacity: 0;
-  mix-blend-mode: difference;
-  transition: opacity 0.3s;
-}
-.cursor.is-visible { opacity: 1; }
-.cursor::before {
-  content: "";
-  position: absolute;
-  left: 0; top: 0;
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  background: #fff;
-  translate: -50% -50%;
-  transition: width 0.35s var(--ease), height 0.35s var(--ease), background 0.3s, border-color 0.3s, scale 0.2s;
-  border: 1px solid transparent;
-}
-.cursor.is-link::before { width: 48px; height: 48px; background: transparent; border-color: #fff; }
-.cursor.is-label { mix-blend-mode: normal; }
-.cursor.is-label::before { width: 88px; height: 88px; background: var(--fg); }
-.cursor.is-down::before { scale: 0.85; }
-.cursor__label {
-  position: absolute;
-  left: 0; top: 0;
-  translate: -50% -50%;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  color: var(--bg);
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-.cursor.is-label .cursor__label { opacity: 1; }
-
 /* Magnetic links ease back into place */
 [data-magnetic] { transition: opacity 0.2s, border-color 0.2s, transform 0.5s var(--ease); }
 .footer__mail { display: inline-block; }

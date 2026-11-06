@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Extra effects: intro loader, custom cursor, draggable 3D ring, text scramble,
+   Extra effects: intro loader, draggable 3D ring, text scramble,
    live clock, counters, magnetic links and the interactive footer name.
    This is polish only: the site works without this file.
    ========================================================================== */
@@ -69,7 +69,6 @@
   if (ring && tilt && stage && hero && ring.children.length) {
     ring.classList.add("ring--js");          // turns off the CSS spin; JS drives it now
     stage.classList.add("is-draggable");
-    stage.dataset.cursor = "Drag";
 
     const BASE_X = -14;                      // keep in sync with .ring-tilt in style.css
     const BASE_Z = 11;
@@ -157,57 +156,7 @@
     }
   }
 
-  /* ---------- 4. Custom cursor (mouse / trackpad only) ---------- */
-
-  if (finePointer) {
-    const cursor = document.createElement("div");
-    cursor.className = "cursor";
-    cursor.setAttribute("aria-hidden", "true");
-    cursor.innerHTML = '<span class="cursor__label"></span>';
-    document.body.appendChild(cursor);
-    const label = cursor.firstElementChild;
-    root.classList.add("has-cursor");
-
-    document.querySelectorAll(".card a").forEach((a) => { a.dataset.cursor = "View"; });
-    document.querySelectorAll(".row").forEach((a) => { a.dataset.cursor = "Open"; });
-
-    let x = -100, y = -100, cx = -100, cy = -100, shown = false;
-    window.addEventListener("pointermove", (e) => {
-      if (e.pointerType !== "mouse") return;
-      x = e.clientX;
-      y = e.clientY;
-      if (!shown) {
-        shown = true;
-        cx = x;
-        cy = y;
-        cursor.classList.add("is-visible");
-      }
-    }, { passive: true });
-    document.addEventListener("pointerout", (e) => {
-      if (!e.relatedTarget) { shown = false; cursor.classList.remove("is-visible"); }
-    });
-    document.addEventListener("pointerdown", () => cursor.classList.add("is-down"));
-    document.addEventListener("pointerup", () => cursor.classList.remove("is-down"));
-
-    document.addEventListener("pointerover", (e) => {
-      const target = e.target.closest("[data-cursor], a, button");
-      const text = target && target.dataset.cursor;
-      cursor.classList.toggle("is-link", Boolean(target) && !text);
-      cursor.classList.toggle("is-label", Boolean(text));
-      if (text) label.textContent = text;
-    });
-
-    const follow = () => {
-      const k = reduceMotion ? 1 : 0.22;
-      cx += (x - cx) * k;
-      cy += (y - cy) * k;
-      cursor.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
-      raf(follow);
-    };
-    raf(follow);
-  }
-
-  /* ---------- 5. Magnetic links ---------- */
+  /* ---------- 4. Magnetic links ---------- */
 
   if (finePointer && !reduceMotion) {
     document.querySelectorAll("[data-magnetic]").forEach((el) => {
@@ -221,7 +170,7 @@
     });
   }
 
-  /* ---------- 6. Text scramble on hover / keyboard focus ---------- */
+  /* ---------- 5. Text scramble on hover / keyboard focus ---------- */
 
   if (!reduceMotion) {
     const GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#/*+=";
@@ -253,7 +202,7 @@
     });
   }
 
-  /* ---------- 7. Counters ---------- */
+  /* ---------- 6. Counters ---------- */
 
   const counters = document.querySelectorAll(".stat__num[data-counter]");
   counters.forEach((el) => {
@@ -284,7 +233,7 @@
     io.observe(el);
   });
 
-  /* ---------- 8. Footer name: letters light up under the cursor ---------- */
+  /* ---------- 7. Footer name: letters light up under the mouse ---------- */
 
   const markName = document.querySelector(".footer__mark span");
   if (markName) {
