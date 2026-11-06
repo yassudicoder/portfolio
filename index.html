@@ -10,12 +10,26 @@
   <meta name="theme-color" content="#0a0a0a">
   <meta name="color-scheme" content="dark">
 
-  <!-- Social share preview. After you deploy, uncomment og:image and use your full domain. -->
+  <!-- Social share preview (LinkedIn, WhatsApp, X…). If you change your domain, update the two URLs. -->
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://portfolio-two-tan-0ium45d857.vercel.app/">
   <meta property="og:title" content="Yash Desai — Web Developer &amp; UI/UX Designer">
   <meta property="og:description" content="Local-first Chrome extensions, web apps and websites, designed and built start to finish.">
-  <!-- <meta property="og:image" content="https://your-domain.com/assets/og-image.jpg"> -->
+  <meta property="og:image" content="https://portfolio-two-tan-0ium45d857.vercel.app/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Decide before first paint whether to play the intro (once per visit, never with reduced motion). -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      root.classList.add("intro");
+      try { if (!sessionStorage.getItem("yd-intro-seen")) root.classList.add("is-loading"); }
+      catch (e) { root.classList.add("is-loading"); }
+    })();
+  </script>
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
@@ -26,11 +40,25 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/projects.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/fx.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
+  <!-- Intro loader (shown once per visit; see the script in <head>) -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__top label"><span>Portfolio</span><span>© 2026</span></div>
+    <div class="loader__name">yash desai</div>
+    <div class="loader__bottom">
+      <span class="label">Web developer &amp; UI/UX designer</span>
+      <span class="loader__count">000</span>
+    </div>
+    <div class="loader__bar"><span></span></div>
+  </div>
+
   <header class="site-header">
+    <p class="header-meta header-meta--left label">India <span class="muted">·</span> <time id="clock">IST</time></p>
+    <p class="header-meta header-meta--right label"><span class="pulse" aria-hidden="true"></span>Available for work</p>
     <a href="#top" class="wordmark" aria-label="Yash Desai — home">yash desai</a>
     <nav aria-label="Primary">
       <ul class="nav">
@@ -58,14 +86,14 @@
         </p>
 
         <div class="hero__cta">
-          <a class="bracket" href="#work">Explore work</a>
-          <a class="bracket" href="#contact">Start a project</a>
+          <a class="bracket" href="#work" data-magnetic>Explore work</a>
+          <a class="bracket" href="#contact" data-magnetic>Start a project</a>
         </div>
       </div>
 
       <div class="hero__stage">
         <div class="scene">
-          <img class="hero__portrait" src="assets/portrait.png" alt="Portrait of Yash Desai" width="1036" height="1000" fetchpriority="high">
+          <img class="hero__portrait" src="assets/portrait.png" alt="Portrait of Yash Desai" width="1036" height="1000" fetchpriority="high" draggable="false">
           <div class="ring-tilt" aria-hidden="true">
             <div class="ring" id="ring"></div>
           </div>
@@ -113,6 +141,14 @@
       <div class="work-grid" id="workGrid"></div>
 
       <noscript><p class="label">Turn on JavaScript to see the projects.</p></noscript>
+
+      <!-- Numbers count up when scrolled into view. data-counter="projects" uses the number of projects in js/projects.js -->
+      <dl class="stats" data-fade>
+        <div class="stat"><dt class="label muted">Projects shipped</dt><dd class="stat__num" data-counter="projects">06</dd></div>
+        <div class="stat"><dt class="label muted">Chrome extensions</dt><dd class="stat__num" data-counter="3">03</dd></div>
+        <div class="stat"><dt class="label muted">Extension installs</dt><dd class="stat__num" data-counter="300" data-suffix="+">300+</dd></div>
+        <div class="stat"><dt class="label muted">Servers. Your data stays on your device</dt><dd class="stat__num" data-counter="0" data-from="99">00</dd></div>
+      </dl>
     </section>
 
     <!-- ───────────── APPROACH / ABOUT ───────────── -->
@@ -175,7 +211,7 @@
           Opening a clinic, running a cafe, launching a startup or redesigning a site? Tell me
           what you need. I reply within one working day, and the first call is free.
         </p>
-        <a class="footer__mail" href="mailto:boxai5115@gmail.com">boxai5115@gmail.com</a>
+        <a class="footer__mail" href="mailto:boxai5115@gmail.com" data-magnetic>boxai5115@gmail.com</a>
       </div>
 
       <div class="footer__cols">
