@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Yash Desai — Web Developer &amp; UI/UX Designer</title>
+  <meta name="description" content="Portfolio of Yash Desai, a web developer and UI/UX designer from India. Local-first Chrome extensions, web apps and websites, designed in Figma and built by the same hands.">
+  <meta name="author" content="Yash Desai">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="color-scheme" content="dark">
+
+  <!-- Social share preview. After you deploy, uncomment og:image and use your full domain. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Yash Desai — Web Developer &amp; UI/UX Designer">
+  <meta property="og:description" content="Local-first Chrome extensions, web apps and websites, designed and built start to finish.">
+  <!-- <meta property="og:image" content="https://your-domain.com/assets/og-image.jpg"> -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/projects.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a href="#top" class="wordmark" aria-label="Yash Desai — home">yash desai</a>
+    <nav aria-label="Primary">
+      <ul class="nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ───────────── HERO ───────────── -->
+    <section class="hero" id="top">
+      <div class="hero__copy">
+        <h1 class="hero__title">
+          <span class="l l--indent">Ideas that</span>
+          <span class="l l--spread"><span>become</span><span>real</span></span>
+          <span class="l">products.</span>
+        </h1>
+
+        <p class="hero__lede label">
+          Chrome extensions, web apps and websites I've designed and built. Small, honest
+          tools that run on your machine, and sites for businesses that need to be found.
+        </p>
+
+        <div class="hero__cta">
+          <a class="bracket" href="#work">Explore work</a>
+          <a class="bracket" href="#contact">Start a project</a>
+        </div>
+      </div>
+
+      <div class="hero__stage">
+        <div class="scene">
+          <img class="hero__portrait" src="assets/portrait.png" alt="Portrait of Yash Desai" width="1036" height="1000" fetchpriority="high">
+          <div class="ring-tilt" aria-hidden="true">
+            <div class="ring" id="ring"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tape" aria-hidden="true">
+        <div class="tape__track">
+          <div class="tape__group">
+            <span>Local-first tools</span><span class="sq2"></span>
+            <span>Web developer &amp; UI/UX designer</span><span class="sq2"></span>
+            <span>From Figma to live</span><span class="sq2"></span>
+            <span>Available for freelance</span><span class="sq2"></span>
+          </div>
+          <div class="tape__group">
+            <span>Local-first tools</span><span class="sq2"></span>
+            <span>Web developer &amp; UI/UX designer</span><span class="sq2"></span>
+            <span>From Figma to live</span><span class="sq2"></span>
+            <span>Available for freelance</span><span class="sq2"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── STATEMENT ───────────── -->
+    <section class="statement" aria-label="Philosophy">
+      <span class="statement__colon statement__colon--l" aria-hidden="true">:</span>
+      <p class="statement__text" data-reveal-words>
+        I strip away the unnecessary, building small tools and websites grounded in
+        clarity, speed and honest craft. Nothing hidden.
+      </p>
+      <span class="statement__colon statement__colon--r" aria-hidden="true">:</span>
+    </section>
+
+    <!-- ───────────── WORK ───────────── -->
+    <section class="section work" id="work">
+      <div class="work__top" data-fade>
+        <div class="work__head">
+          <span class="sq2" aria-hidden="true"></span>
+          <h2 class="work__title">A selection of recent work.</h2>
+        </div>
+        <ol class="work-list" id="workList" aria-label="Project index"></ol>
+      </div>
+
+      <div class="work-grid" id="workGrid"></div>
+
+      <noscript><p class="label">Turn on JavaScript to see the projects.</p></noscript>
+    </section>
+
+    <!-- ───────────── APPROACH / ABOUT ───────────── -->
+    <section class="statement" aria-label="Approach">
+      <span class="statement__colon statement__colon--l" aria-hidden="true">:</span>
+      <p class="statement__text" data-reveal-words>
+        Good products start with good questions. Structure sets the direction, design gives
+        it form, and careful engineering makes every detail hold up.
+      </p>
+      <span class="statement__colon statement__colon--r" aria-hidden="true">:</span>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="about__grid">
+        <figure class="about__photo" data-fade>
+          <img src="assets/about.jpg" alt="Yash Desai in a white shirt, arms crossed" width="800" height="1000" loading="lazy" decoding="async">
+        </figure>
+
+        <div class="about__bio" data-fade>
+          <h2 class="label muted">( About )</h2>
+          <p class="about__text">
+            I'm Yash Desai, a web developer and UI/UX designer from India. I run
+            The Open Box, a solo studio shipping small, local-first browser tools with no accounts
+            and no servers. I also build websites for independent businesses and startups,
+            designed in Figma and built by the same hands, start to finish.
+          </p>
+          <div class="about__links">
+            <a class="bracket" href="#contact">Get in touch</a>
+            <a class="bracket" href="https://www.linkedin.com/in/yash-desai-1aa9b5310/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="bracket" href="https://github.com/yassudicoder" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <!-- ✏️ Add your CV to assets/ and uncomment:
+            <a class="bracket" href="assets/yash-desai-cv.pdf" download>Download CV</a> -->
+          </div>
+        </div>
+
+        <ol class="process" data-fade>
+          <li><span class="label muted">01</span><h3>Structure</h3><p>UX, user flows and wireframes, so the site does what people open it for.</p></li>
+          <li><span class="label muted">02</span><h3>Design</h3><p>High-fidelity layouts and a clickable prototype in Figma for every screen size.</p></li>
+          <li><span class="label muted">03</span><h3>Build</h3><p>Responsive, fast code on technology chosen to fit the job, not out of habit.</p></li>
+          <li><span class="label muted">04</span><h3>Ship</h3><p>Testing, deployment and a live site on your own domain, with the keys handed over.</p></li>
+        </ol>
+
+        <div class="skills" data-fade>
+          <h3 class="label muted">( Toolkit )</h3>
+          <ul>
+            <li>HTML &amp; CSS</li><li>JavaScript</li><li>Chrome extensions</li>
+            <li>Figma</li><li>Vercel</li><li>Git</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ───────────── FOOTER / CONTACT ───────────── -->
+  <footer class="footer" id="contact">
+    <div class="footer__top">
+      <div class="footer__intro">
+        <h2 class="footer__title">Let's create<br>something meaningful</h2>
+        <p class="footer__text">
+          Opening a clinic, running a cafe, launching a startup or redesigning a site? Tell me
+          what you need. I reply within one working day, and the first call is free.
+        </p>
+        <a class="footer__mail" href="mailto:boxai5115@gmail.com">boxai5115@gmail.com</a>
+      </div>
+
+      <div class="footer__cols">
+        <div>
+          <h3 class="label muted">Menu</h3>
+          <ul>
+            <li><a class="bracket" href="#top">Home</a></li>
+            <li><a class="bracket" href="#work">Work</a></li>
+            <li><a class="bracket" href="#about">About</a></li>
+            <li><a class="bracket" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="label muted">Services</h3>
+          <ul>
+            <li>[ Web development ]</li>
+            <li>[ UI / UX design ]</li>
+            <li>[ Landing pages ]</li>
+            <li>[ Redesigns ]</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="label muted">Elsewhere</h3>
+          <ul>
+            <li><a class="bracket" href="https://www.linkedin.com/in/yash-desai-1aa9b5310/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a class="bracket" href="https://github.com/yassudicoder" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a class="bracket" href="https://the-open-box.vercel.app/" target="_blank" rel="noopener noreferrer">The Open Box</a></li>
+            <li><a class="bracket" href="https://the-open-box.vercel.app/build/#brief" target="_blank" rel="noopener noreferrer">Send a brief</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__mark" aria-hidden="true"><span>yash desai</span></div>
+
+    <div class="footer__bottom label muted">
+      <span>© <span id="year">2026</span> Yash Desai. All rights reserved.</span>
+      <a class="bracket" href="#top">Back to top</a>
+    </div>
+  </footer>
+</body>
+</html>

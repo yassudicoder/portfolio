@@ -1,0 +1,7 @@
+# Personal photos not used by the site (originals; the site uses portrait.png / about.jpg)
+assets/WhatsApp Image*
+assets/Dramatic Black-and-White Studio Portrait.png
+
+# Local tooling
+.vercel
+.playwright-mcp
